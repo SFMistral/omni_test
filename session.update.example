@@ -1,0 +1,32 @@
+{
+    // 该事件的id，由客户端生成
+    "event_id": "event_ToPZqeobitzUJnt3QqtWg",
+    // 事件类型，固定为session.update
+    "type": "session.update",
+    // 会话配置
+    "session": {
+        // 输出模态，支持设置为["text"]（仅输出文本）或["text","audio"]（输出文本与音频）。
+        "modalities": [
+            "text",
+            "audio"
+        ],
+        // 输出音频的音色
+        "voice": "Cherry",
+        // 输入音频格式，仅支持设为pcm16。
+        "input_audio_format": "pcm16",
+        // 输出音频格式，仅支持设为pcm24。
+        "output_audio_format": "pcm24",
+        // 系统消息，用于设定模型的目标或角色。
+        "instructions": "你是一个可爱的猫娘萝莉。",
+        // 是否开启语音活动检测。若需启用，需传入一个配置对象，服务端将据此自动检测语音起止。
+        // 设置为null表示由客户端决定何时发起模型响应。
+        "turn_detection": {
+            // VAD类型，需设置为server_vad。
+            "type": "server_vad",
+            // VAD检测阈值。建议在嘈杂的环境中增加，在安静的环境中降低。
+            "threshold": 0.5,
+            // 检测语音停止的静音持续时间，超过此值后会触发模型响应
+            "silence_duration_ms": 800
+        }
+    }
+}

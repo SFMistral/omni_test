@@ -1,0 +1,5 @@
+dashscope
+pyaudio
+python-dotenv
+pillow
+mss
